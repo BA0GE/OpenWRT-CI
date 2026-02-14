@@ -155,6 +155,9 @@ jobs:
         run: |
           cd ./wrt/package/
 
+          # 插入这一行：添加 Nikki 仓库
+          echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> "feeds.conf.default"
+
           $GITHUB_WORKSPACE/Scripts/Packages.sh
           $GITHUB_WORKSPACE/Scripts/Handles.sh
 
